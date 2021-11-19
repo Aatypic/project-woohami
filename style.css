@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    top: 0;
+    left: 0;
+    position: relative;
+    height: 100vh;
+    background-color: rgb(201, 148, 157);
+    background: linear-gradient(#c95376, #c25156);
+}
+
+.navigation {
+    color: rgb(247, 245, 245);
+}
+
+h1 {
+    font-family: 'Lobster', cursive;
+    margin-block-end: 0;
+    margin-block-start: 0;
+    font-size: 2.3em;
+}
+
+.nav-list {
+    background-color: rgb(2, 123, 170);
+    width: max-content;
+    position: absolute;
+    font: 15pt 'Fjalla One';
+
+
+    /* rotation style */
+    transform: rotate(-90deg);
+    transform-origin: bottom left;
+    right: calc(50vw - 195px);
+    bottom: calc(50vh - 70px);
+
+    z-index: 1000;
+}
+
+.nav-list ul {
+    /* set to from default to 0*/
+    margin-block-end: 0;
+    margin-block-start: 0;
+    padding-inline-start: 0;
+
+    text-decoration: none;
+    display: flex;
+    /* mobile version a mettre no-reverse en desktop */
+    flex-direction: row-reverse;
+}
+
+.nav-list li {
+    list-style: none;
+    /* modif below */
+    width: 100px;
+}
+
+.nav-list li:focus,
+.nav-list li:hover,
+.nav-list li:active {
+    background-color: rgb(247, 245, 245);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: rgb(247, 245, 245);
+}
+
+.nav-list a:focus,
+.nav-list a:hover,
+.nav-list a:active {
+    color: rgb(2, 123, 170);
+}
+
+.box {
+    z-index: 1;
+    width: 78vw;
+    height: 84vh;
+
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+}
+
+.white {
+    border-top-left-radius: 50px;
+    border-top-right-radius: 25px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 25px;
+
+    background: #e0e0e0;
+    box-shadow: 7px 3px 67px 0px #682c3e;
+}

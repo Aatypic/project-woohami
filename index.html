@@ -9,7 +9,8 @@
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Lobster&family=Roboto&display=swap"
+        rel="stylesheet">
 
     <!-- icons -->
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
@@ -30,9 +31,14 @@
                 </div>
                 <div class="nav-list">
                     <ul>
-                        <li><a href="#"><i class='bx bxs-image'></i>Photos</a></li>
-                        <li><a href="#">Videos</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li>
+                            <a href="#photos">
+                                <span>Photos</span><!-- <i class='bx bxs-image'></i> -->
+
+                            </a>
+                        </li>
+                        <li><a href="#videos">Videos</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
 
@@ -41,7 +47,37 @@
     </header>
 
     <article>
-        <div class="box white"></div>
+        <div class="box white">
+            <section class="container">
+                <div id="photos">
+                    <span>
+                        <h2>Vous pouvez retrouvez mes créations sur Instagram.</h2>
+                    </span>
+                    <div id="instafeed">
+                    </div>
+                </div>
+                <div id="about-me">
+                    <span>
+                        <h2>About me</h2>
+                    </span>
+                </div>
+                <div id="contact">
+                    <span>
+                        <h2>Contact information</h2>
+                    </span>
+                    <span>
+                        <p>Je suis présent sur les réseaux sociaux vous pourrez me joindre facilement ou sinon par mail
+                            ou par téléphone.</p>
+                    </span>
+                    <div class="social-media">
+                        <a href="https://www.instagram.com/woohami_/">
+                            <span><i class='bx bxl-instagram'></i></span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
     </article>
 
 
@@ -52,6 +88,11 @@
     <footer>
 
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/gh/stevenschobert/instafeed.js@2.0.0rc1/src/instafeed.min.js"></script>
+    <script src="instapp.js"></script>
 </body>
+
+
 
 </html>

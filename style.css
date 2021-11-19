@@ -25,7 +25,7 @@ h1 {
 }
 
 .nav-list {
-    background-color: rgb(2, 123, 170);
+    /* background-color: rgb(2, 123, 170); */
     width: max-content;
     position: absolute;
     font: 15pt 'Fjalla One';
@@ -34,8 +34,8 @@ h1 {
     /* rotation style */
     transform: rotate(-90deg);
     transform-origin: bottom left;
-    right: calc(50vw - 195px);
-    bottom: calc(50vh - 70px);
+    right: calc(50vw - 179px);
+    bottom: calc(50vh - 60px);
 
     z-index: 1000;
 }
@@ -53,15 +53,17 @@ h1 {
 }
 
 .nav-list li {
+    text-align: center;
     list-style: none;
     /* modif below */
     width: 100px;
+    height: inherit;
 }
 
 .nav-list li:focus,
 .nav-list li:hover,
 .nav-list li:active {
-    background-color: rgb(247, 245, 245);
+    background-color: #e0e0e0;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 
@@ -86,6 +88,7 @@ h1 {
     position: absolute;
     bottom: 16px;
     right: 16px;
+    overflow: scroll;
 }
 
 .white {
@@ -96,4 +99,37 @@ h1 {
 
     background: #e0e0e0;
     box-shadow: 7px 3px 67px 0px #682c3e;
+}
+
+.container {
+    display: grid;
+    position: relative;
+    padding: 2rem;
+}
+
+h2 {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    letter-spacing: 2px;
+    font-size: 13px;
+    /* margin: 10px; */
+}
+
+a img {
+    max-width: 100%;
+    justify-self: center;
+    margin: 23px 0px;
+    border-radius: 10px;
+    background: linear-gradient(315deg, #cacaca, #f0f0f0);
+    box-shadow: -20px -20px 60px #bebebe, 12px 10px 20px 0px #c25156;
+}
+
+.item {
+    width: 50vw;
+    height: 25vh;
+    justify-self: center;
+
+    border-radius: 10px;
+    background: linear-gradient(315deg, #cacaca, #f0f0f0);
+    box-shadow: -20px -20px 60px #bebebe, 12px 10px 20px 0px #c25156;
 }

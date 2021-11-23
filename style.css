@@ -58,6 +58,7 @@ h1 {
     /* modif below */
     width: 100px;
     height: inherit;
+    text-transform: uppercase;
 }
 
 .nav-list li:focus,
@@ -107,8 +108,18 @@ h1 {
     padding: 2rem;
 }
 
-h2 {
+h2,
+h3 {
     font-family: 'Roboto', sans-serif;
+}
+
+h2 {
+    color: black;
+    letter-spacing: -1px;
+    font-size: 15px;
+}
+
+h3 {
     text-align: center;
     letter-spacing: 2px;
     font-size: 13px;
@@ -122,6 +133,12 @@ a img {
     border-radius: 10px;
     background: linear-gradient(315deg, #cacaca, #f0f0f0);
     box-shadow: -20px -20px 60px #bebebe, 12px 10px 20px 0px #c25156;
+}
+
+a img:hover,
+a img:focus {
+    transform: scale(0.91);
+    transition: linear 0.5s;
 }
 
 .item {

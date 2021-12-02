@@ -1,0 +1,12 @@
+-menu
+    -r̶e̶n̶d̶r̶e̶ a̶c̶t̶i̶v̶e̶ p̶a̶g̶e̶ v̶i̶s̶i̶b̶l̶e̶ s̶u̶r̶ l̶e̶ m̶e̶n̶u̶
+
+-version mobile
+
+-version desktop
+    -demarrer les medias querries/breakpoints
+
+-titre h1
+    -deplacer
+
+-ajouter icons en mode full screen pour le menu, home/contact/gallery/a propos ?

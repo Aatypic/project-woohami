@@ -10,18 +10,34 @@ body {
     position: relative;
     height: 100vh;
     background-color: rgb(201, 148, 157);
-    background: linear-gradient(#c95376, #c25156);
+    background: linear-gradient(#a33656, #d6464d);
+    /* linear-gradient(#c95376, #c25156); */
 }
 
 .navigation {
     color: rgb(247, 245, 245);
 }
 
+.nav-title {
+    position: relative;
+}
+
 h1 {
     font-family: 'Lobster', cursive;
     margin-block-end: 0;
     margin-block-start: 0;
-    font-size: 2.3em;
+    font-size: 2.7em;
+    position: absolute;
+    top: 50px;
+    left: 69px;
+}
+
+.nav-sub-title {
+    position: absolute;
+    transform: rotate(-90deg);
+    transform-origin: bottom left;
+    left: calc(50vw - 123px);
+    bottom: calc(50vh - 300px);
 }
 
 .nav-list {
@@ -34,7 +50,7 @@ h1 {
     /* rotation style */
     transform: rotate(-90deg);
     transform-origin: bottom left;
-    right: calc(50vw - 179px);
+    left: calc(50vw - 119px);
     bottom: calc(50vh - 60px);
 
     z-index: 1000;
@@ -61,12 +77,12 @@ h1 {
     text-transform: uppercase;
 }
 
-.nav-list li:focus,
-.nav-list li:hover,
-.nav-list li:active {
+.nav-list li .active {
+    display: block;
     background-color: #e0e0e0;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    color: rgb(2, 123, 170);
 
 }
 
@@ -133,6 +149,11 @@ a img {
     border-radius: 10px;
     background: linear-gradient(315deg, #cacaca, #f0f0f0);
     box-shadow: -20px -20px 60px #bebebe, 12px 10px 20px 0px #c25156;
+}
+
+[img=title] {
+    width: 100%;
+    color: black;
 }
 
 a img:hover,

@@ -1,0 +1,72 @@
+:root {
+    --red: red;
+    --background: white;
+    --container: yellow;
+}
+
+body {
+    min-height: 100vh;
+    display: grid;
+    grid-gap: 2em;
+    grid-template-columns: 0.25fr auto 1fr;
+    grid-template-rows: auto;
+    /* grid: 'header'auto 'nav'auto 'main'1fr 'footer'auto / 1fr; */
+    grid-template-areas:
+        ' . header nav'
+        'aside main main'
+        'aside main main'
+        'footer footer footer';
+}
+
+body {
+    background: var(--red);
+}
+
+header {
+    grid-area: header;
+}
+
+nav {
+    grid-area: nav;
+}
+
+aside {
+    grid-area: aside;
+}
+
+main {
+    grid-area: main;
+}
+
+footer {
+    grid-area: footer;
+}
+
+header,
+nav,
+aside,
+main,
+footer {
+    background: var(--background);
+    padding: 2em;
+}
+
+
+
+.container {
+    min-height: 100vh;
+    display: grid;
+    grid-gap: 2em;
+    /* grid-template-columns: 0.25fr auto 1fr; */
+    /* grid-template-rows: auto; */
+}
+
+.title-main,
+.content-main {
+    background: var(--container);
+    padding: 2em;
+}
+
+a img {
+    max-width: 100%;
+}

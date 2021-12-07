@@ -9,13 +9,12 @@ body {
     left: 0;
     position: relative;
     height: 100vh;
-    background-color: rgb(201, 148, 157);
-    background: linear-gradient(#a33656, #d6464d);
+    /* background-color: rgb(201, 148, 157); */
+    background: linear-gradient(#892c47, #d6464d);
     /* linear-gradient(#c95376, #c25156); */
 }
 
 .navigation {
-    z-index: 100;
     position: relative;
     color: rgb(247, 245, 245);
 }
@@ -40,7 +39,8 @@ h1 {
     bottom: calc(0vh - 200px);
     right: calc(50vw - -119px);
     display: flex;
-    width: max-content;
+    width: 530px;
+    justify-content: space-between;
 }
 
 .nav-sub-title {}
@@ -104,7 +104,7 @@ h1 {
 }
 
 .box {
-    z-index: 100;
+    /* z-index: 100; */
     width: 78vw;
     height: 84vh;
 
@@ -115,13 +115,13 @@ h1 {
 }
 
 .white {
-    border-top-left-radius: 50px;
+    border-top-left-radius: 25px;
     border-top-right-radius: 25px;
-    border-bottom-left-radius: 50px;
+    border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
 
     background: #e0e0e0;
-    box-shadow: 7px 3px 67px 0px #682c3e;
+    /* box-shadow: 7px 3px 67px 0px #682c3e; */
 }
 
 .container {
@@ -148,19 +148,26 @@ h3 {
     /* margin: 10px; */
 }
 
+
+#instafeed {
+    display: grid;
+    grid-gap: 1em;
+}
+
+#instafeed a {
+    text-decoration: none;
+    display: inline-block;
+}
+
 a img {
     max-width: 100%;
-    justify-self: center;
+    /* justify-self: center; */
     margin: 23px 0px;
     border-radius: 10px;
     background: linear-gradient(315deg, #cacaca, #f0f0f0);
-    box-shadow: -20px -20px 60px #bebebe, 12px 10px 20px 0px #c25156;
+    /* box-shadow: -20px -20px 60px #e0e0e0, 8px 10px 8px 0px #4f4f4f; */
 }
 
-[img=title] {
-    width: 100%;
-    color: black;
-}
 
 a img:hover,
 a img:focus {
@@ -176,4 +183,81 @@ a img:focus {
     border-radius: 10px;
     background: linear-gradient(315deg, #cacaca, #f0f0f0);
     box-shadow: -20px -20px 60px #bebebe, 12px 10px 20px 0px #c25156;
+}
+
+/* Breakpoints */
+/* Small sm >= 576px */
+/* title move, navbar ? img size */
+@media screen and (min-width:576px) {
+    .nav-title {
+        left: 100px;
+    }
+
+    .navbar {
+        right: calc(60vw - -119px);
+    }
+
+    a img {
+        max-width: 89%;
+    }
+}
+
+/* Medium md >= 768px */
+/* title move, navbar ? img size */
+@media screen and (min-width:768px) {
+    .nav-title {
+        left: 145px;
+    }
+
+    .navbar {
+        right: calc(64vw - -119px);
+    }
+
+    a img {
+        max-width: 45%;
+    }
+}
+
+/* Large lg >= 992px */
+/* title move, navbar ?+ icons img size x2 ou x3*/
+@media screen and (min-width:992px) {
+    .nav-title {
+        left: 200px;
+    }
+
+    .navbar {
+        right: calc(67vw - -124px);
+    }
+
+    a img {
+        max-width: 40%;
+    }
+}
+
+
+/* Extra large xl >= 1200px */
+/* title move, navbar ?+icons  img size x3 */
+@media screen and (min-width:1200px) {
+    .nav-title {
+        left: 240px;
+    }
+
+    h1 {
+        font-size: 1.1em;
+    }
+
+    .navbar {
+        right: calc(69vw - -123px);
+    }
+
+    a img {
+        max-width: 25%;
+    }
+}
+
+@media screen and (min-width:1400px) {
+    .box {
+        width: 80vw;
+        height: fit-content;
+    }
 }

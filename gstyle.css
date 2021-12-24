@@ -13,10 +13,11 @@
 }
 
 body {
+  margin-top: 3vh;
   height: 100vh;
   display: grid;
-  grid-gap: 1em;
-  grid-template-columns: repeat(3, 1fr) 48px;
+  /* grid-gap: 1em; */
+  grid-template-columns: 0.5fr repeat(2, 1fr) 48px;
   grid-template-rows: auto;
   /* grid: 'header'auto 'nav'auto 'main'1fr 'footer'auto / 1fr; */
   grid-template-areas:
@@ -50,6 +51,7 @@ nav {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
+  align-self: end;
 }
 ul {
   display: flex;
@@ -59,10 +61,25 @@ ul {
 }
 nav li {
   list-style: none;
+  width: inherit;
+  text-align: center;
+}
+.active {
+  background-color: #efefef;
+  border-radius: 12px 12px 0 0;
+  color: purple;
+}
+nav a:focus,
+nav a:hover,
+nav a:active {
+  color: purple;
 }
 
 .btn {
   text-decoration: none;
+  display: block;
+
+  padding-top: 1vh;
 }
 
 aside {
@@ -114,10 +131,27 @@ footer {
 a img {
 
   max-width: 100%;
+  zoom: 2;
+
   margin-bottom: 2em;
   border-radius: 7px;
 }
 
+/* Au survol de la souris EFFETS sur les images  */
+a img:hover {
+  animation-name: hover;
+  animation-duration: 2s;
+}
+
+@keyframes hover {
+  0%,100% {
+    transform: scale(1);
+  }
+  50%{
+    transform: scale(1.1);
+  }
+
+}
 
 @media screen and (max-width:760px){
   .main-content {

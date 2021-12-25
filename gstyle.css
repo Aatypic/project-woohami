@@ -13,7 +13,6 @@
 }
 
 body {
-  margin-top: 3vh;
   height: 100vh;
   display: grid;
   /* grid-gap: 1em; */
@@ -25,7 +24,7 @@ body {
     ". main main ."
     ". main main ."
     "aside main main ."
-    "footer footer footer footer";
+    ". footer footer .";
 }
 
 body {
@@ -39,6 +38,7 @@ h1,
 
 header {
   grid-area: header;
+  margin-top: 12px;
 }
 
 header h1 {
@@ -84,10 +84,20 @@ nav a:active {
 
 aside {
   grid-area: aside;
+  position: relative;
+  width: 100%;
+  margin: 5vh auto;
 }
 
 aside h2 {
-  transform: rotate(-90deg);
+  display: block;
+  
+  transform-origin: bottom right;
+  font-family: 'Roboto';
+  font-size: 1em;
+  transform: rotate(-90deg) translateX(100%);
+
+  letter-spacing: -1px;
 }
 
 main {
@@ -100,6 +110,10 @@ main {
 
 footer {
   grid-area: footer;
+  min-height: 4vh;
+
+  background-color: grey;
+  border-radius: 25px;
 }
 
 header,
@@ -122,14 +136,12 @@ footer {
 
 .main-content {
   display: grid;
-  margin-bottom: 2em;
   grid-template-columns: repeat(3, 1fr);
   word-wrap: normal;
   grid-gap: 12px;
 }
 
 a img {
-
   max-width: 100%;
   zoom: 2;
 

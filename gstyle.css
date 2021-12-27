@@ -24,10 +24,8 @@ body {
     ". main main ."
     ". main main ."
     "aside main main ."
-    "footer footer footer .";
-}
+    "footer quote quote .";
 
-body {
   background: var(--red);
 }
 
@@ -86,7 +84,7 @@ aside {
   grid-area: aside;
   position: relative;
   width: 100%;
-  margin: 1vh auto;
+  margin: 2vh auto;
 }
 
 aside h2 {
@@ -100,30 +98,34 @@ aside h2 {
   letter-spacing: -1px;
 }
 
+/* ---------------------
+----------MAIN----------
+---------------------- */
+
 main {
   grid-area: main;
-  overflow: scroll;
-  height: 100%;
-  align-items: center;
-  border-radius: 25px;
-}
-
-header,
-nav,
-aside,
-main,
-footer {
-  /* background: var(--dark); */
-  /* padding: 2em; */
+  background: var(--whitey);
 }
 
 .container {
-  border-top: 2px solid white;
+  height: 100%;
+  display: flex;
+  border-radius: 25px;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+
+  -webkit-box-shadow: inset 0px 1px 1px #de1dde;
+  -moz-box-shadow: inset 0px 1px 1px #de1dde;
+  box-shadow: inset 0px 1px 1px #de1dde;
+
+  z-index: 2;
+
+  padding-bottom: 12px;
 }
 
 .main-title,
 .main-content {
-  background: var(--whitey);
   padding: 12px;
 }
 .main-title {
@@ -135,14 +137,25 @@ footer {
   grid-template-columns: repeat(3, 1fr);
   word-wrap: normal;
   grid-gap: 12px;
+
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  align-items: center;
+}
+
+.main-content a {
+  scroll-snap-align: start;
 }
 
 a img {
+  display: block;
   max-width: 100%;
   zoom: 2;
 
   margin-bottom: 2em;
   border-radius: 7px;
+
+  z-index: -1;
 }
 
 /* Au survol de la souris EFFETS sur les images  */
@@ -161,16 +174,19 @@ a img:hover {
   }
 }
 
+/* ---------------------
+----------FOOTER--------
+---------------------- */
+
 footer {
   grid-area: footer;
   min-height: 4vh;
-  display: flex;
+  margin-top: 6px;
   width: 100%;
-  justify-content: space-around;
 }
 footer .social-media {
-  background-color: var(--purple);
-  border-radius: 25px;
+  border: 6px solid var(--purple);
+  border-radius: 10px;
   text-align: center;
   width: 100%;
 }
@@ -183,9 +199,16 @@ footer i {
   color: var(--whitey);
 }
 
-footer .quote {
+.quote {
+  grid-area: quote;
+  margin-top: 6px;
+  border: 2px solid var(--whitey);
+  border-radius: 10px;
   width: 100%;
+  align-content: center;
+  text-align: center;
 }
+
 /* ------------ BREAKPOINTS ----------- */
 
 @media screen and (max-width: 760px) {

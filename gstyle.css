@@ -24,7 +24,7 @@ body {
     ". main main ."
     ". main main ."
     "aside main main ."
-    "footer quote quote .";
+    "footer footer-right footer-right .";
 
   background: var(--red);
 }
@@ -121,7 +121,7 @@ main {
 
   z-index: 2;
 
-  padding-bottom: 12px;
+  padding: 0 12px 12px 12px;
 }
 
 .main-title,
@@ -150,12 +150,14 @@ main {
 a img {
   display: block;
   max-width: 100%;
-  zoom: 2;
+  /* zoom: 2; */
 
   margin-bottom: 2em;
   border-radius: 7px;
 
   z-index: -1;
+
+  background-color: white;
 }
 
 /* Au survol de la souris EFFETS sur les images  */
@@ -199,13 +201,17 @@ footer i {
   color: var(--whitey);
 }
 
-.quote {
-  grid-area: quote;
+.footer-right {
+  grid-area: footer-right;
   margin-top: 6px;
-  border: 2px solid var(--whitey);
-  border-radius: 10px;
+
   width: 100%;
-  align-content: center;
+}
+
+.quote {
+  width: 100%;
+  border-radius: 10px;
+  border: 2px solid var(--whitey);
   text-align: center;
 }
 

@@ -27,7 +27,6 @@ body {
     "header aside nav ."
     "header main main ."
     "header . footer.";
-
   background: var(--bg);
 }
 
@@ -70,8 +69,9 @@ aside {
 aside h2 {
 
   font-family: "Roboto";
-  font-size: 20px;
+  font-size: 18px;
   margin-left: 16px;
+  letter-spacing: 4px;
 
 }
 
@@ -154,7 +154,7 @@ main {
   grid-gap: 12px;
 
   overflow-y: scroll;
-  /* scroll-snap-type: y mandatory; */
+  scroll-snap-type: y mandatory;
 
 }
 
@@ -163,10 +163,9 @@ main {
 }
 
 .main-content a {
-  /* scroll-snap-align: start; */
+  scroll-snap-align: start;
   /* scroll-margin-top: -10px; */
 }
-
 
 
 a img {
@@ -198,6 +197,11 @@ a img:hover {
   50% {
     transform: scale(1.1);
   }
+}
+
+.photo {
+  border-radius: 100%;
+  width: auto;
 }
 
 /* ---------------------

@@ -1,5 +1,6 @@
 :root {
   --bg: linear-gradient(rgb(233 32 68), rgb(194 28 58 / 69%));
+
   --clr-dark: black;
   --clr-whitey: #efefef;
   --clr-white: white;
@@ -8,8 +9,8 @@
   --topbg: rgb(233, 32, 68);
   --lowbg: rgb(194, 28, 58 / 69%);
 
-  --ff-1: 'Roboto', decursive;
-  --ff-2: '';
+  --ff-1: "Roboto", decursive;
+  --ff-2: "";
 }
 
 *,
@@ -51,7 +52,7 @@ header {
 h1 {
   font-size: 160px;
   font-weight: normal;
-  font-family: 'Monoton', cursive;
+  font-family: "Monoton", cursive;
   text-transform: uppercase;
 
   position: fixed;
@@ -71,7 +72,6 @@ aside {
 }
 
 h2 {
-
   font-family: "Roboto";
   font-size: 18px;
 
@@ -79,7 +79,6 @@ h2 {
 
   position: absolute;
   bottom: 0;
-
 }
 
 nav {
@@ -132,7 +131,7 @@ nav a:active {
 main {
   grid-area: main;
   background: var(--clr-whitey);
-  padding: 14px;
+  padding: 2em;
 }
 
 .container {
@@ -145,6 +144,8 @@ main {
   overflow: hidden;
 
   z-index: 2;
+
+  letter-spacing: -0.03em;
 }
 
 .main-title,
@@ -153,7 +154,15 @@ main {
 }
 
 .main-title {
+  margin-right: auto;
+}
+
+.main-title h3 {
+  font-weight: 900;
   font-family: "Roboto";
+  font-size: 2rem;
+  color: var(--clr-secondary);
+  line-height: 1;
 }
 
 .main-content {
@@ -165,7 +174,6 @@ main {
 
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
-
 }
 
 .main-content::-webkit-scrollbar {
@@ -176,23 +184,25 @@ main {
 -------PAGE ABOUT-------
 ---------------------- */
 .main-content {
-  background: rgb(216, 216, 216);
+  /* background: rgb(216, 216, 216); */
   border-radius: 1em;
 }
 
 .about-text {
   grid-column: 1 / 2;
   margin-left: 1em;
-  width: 60ch;
   font-family: var(--ff-1);
   background: rgb(196, 196, 196);
   border-radius: 1em;
 }
 
+p:not([class]) {
+  width: 60ch;
+}
+
 .about-list {
   flex-direction: column;
   list-style-type: disc;
-
 }
 
 .skills {
@@ -204,36 +214,37 @@ main {
   flex-direction: column;
   /* justify-self: center; */
   /* align-self: center; */
-
 }
 
 .skill {
   background: rgb(126, 126, 184);
-  width: ;
 }
 
 .skill::after {
-  content: '';
+  content: "";
   display: block;
   background: yellow;
   width: 10px;
   height: 10px;
 }
 
-.photo {
+picture {
+  height: 100%;
   /* grid-column: 4 / 5; */
   /* grid-row: 1 / 2; */
   grid-column: 3 / 4;
   background: teal;
-  margin-left: auto;
+  /* margin-left: auto; */
 
+  width: 15vw;
+  max-height: 25rem;
+  max-width: 17.5rem;
+  min-width: 10rem;
 }
 
 .photo img {
-
   bottom: 0;
   width: 100px;
-
 }
 
 /* ---------------------
@@ -245,10 +256,9 @@ main {
   /* scroll-margin-top: -10px; */
 }
 
-
 a img {
   display: block;
-  width: 100%;
+  width: 80%;
   zoom: 2;
 
   margin-bottom: 24px;
@@ -266,7 +276,6 @@ a img:hover {
 }
 
 @keyframes hover {
-
   0%,
   100% {
     transform: scale(1);
@@ -293,15 +302,13 @@ footer {
   align-items: center;
 
   margin-right: 24px;
-
 }
 
 .social-txt {
-  font-family: 'Courgette', cursive;
+  font-family: "Courgette", cursive;
   text-transform: lowercase;
   font-size: 1.2em;
 }
-
 
 footer a {
   text-decoration: none;
@@ -334,9 +341,8 @@ footer i {
   }
 }
 
-
 .contrastify {
-  font-family: 'Chewy', cursive;
+  font-family: "Chewy", cursive;
   font-size: 42px;
   width: 100%;
   height: 100%;

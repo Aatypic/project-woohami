@@ -39,11 +39,11 @@
       <!-- middle section of navigation > menu links-->
       <ul id="primary-navigation" data-visible="false" class="primary-navigation">
         <li class="active">
-          <a class="flex icon accueil" href="#"><span class="text-navigation">Accueil</span></a>
+          <a class="flex icon accueil" href="#accueil"><span class="text-navigation">Accueil</span></a>
           <span class="tooltip">Accueil</span>
         </li>
         <li>
-          <a class="flex icon profil" href="#"><span class="text-navigation">Profil</span></a>
+          <a class="flex icon profil" href="#profil"><span class="text-navigation">Profil</span></a>
           <span class="tooltip">Profil</span>
         </li>
         <li>
@@ -68,19 +68,57 @@
     </nav>
     <!-- end of navigation -->
 
-    <main class="primary-main flex">
+    <main class="primary-main">
       <!-- main content of the home page -->
-      <div class="left">
-        <svg class="svg-container-bigger"><use href="#woohami-icon-letter" xlink:href="#woohami"></use></svg>
-      </div>
-      <div class="right">
-        <div class="title-content flex">
-          <h1 class="title">Woohami</h1>
-          <h3 class="subtitle">graphiste</h3>
-          <p class="jobs">logo - montage video - motion design</p>
+      <section class="accueil-main flex" id="accueil">
+        <div class="left">
+          <svg class="svg-container-bigger"><use href="#woohami-icon-letter" xlink:href="#woohami"></use></svg>
         </div>
-      </div>
+        <div class="right">
+          <div class="title-content flex">
+            <h1 class="title">Woohami</h1>
+            <h3 class="subtitle">graphiste</h3>
+            <p class="jobs">logo - montage video - motion design</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="profil" class="profil-main grid">
+        <h2 class="profil-title">Profil</h2>
+        <div class="profil-banner">
+          <blockquote class="quote-banner">"Woohami" se prononce "wou-ah-maille". <em>-Woohami</em></blockquote>
+          <h4 class="text-banner">Salut, je suis freelance graphiste, spécialisé en logo, montage vidéo et motion designer.</h4>
+        </div>
+        <div class="profil-skills">
+          <p>Logiciels utilisés</p>
+          <p class="text">Je suis très à l'aise avec la suite Adobe, ici les logiciels que j'utitlise le plus</p>
+          <div class="skills-animations">
+            <div class="skill-icon"></div>
+            <div class="skill-bar"></div>
+            <div class="skill-icon"></div>
+            <div class="skill-bar"></div>
+            <div class="skill-icon"></div>
+            <div class="skill-bar"></div>
+            <div class="skill-icon"></div>
+            <div class="skill-bar"></div>
+          </div>
+        </div>
+        <div class="profil-references">
+          <p>Où peut-on me retrouver ?</p>
+          <p class="text">Vous pouvez retrouver mon profil sur ces 3 plateformes</p>
+          <div class="reference-icon"></div>
+          <div class="reference-name"></div>
+          <div class="reference-icon"></div>
+          <div class="reference-name"></div>
+          <div class="reference-icon"></div>
+          <div class="reference-name"></div>
+          <div class="reference-icon"></div>
+          <div class="reference-name"></div>
+        </div>
+      </section>
     </main>
+
+    <footer></footer>
 
     <!-- scripts are here -->
     <script>

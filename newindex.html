@@ -38,20 +38,20 @@
 
       <!-- middle section of navigation > menu links-->
       <ul id="primary-navigation" data-visible="false" class="primary-navigation">
-        <li class="active">
-          <a class="flex icon accueil" href="#accueil"><span class="text-navigation">Accueil</span></a>
+        <li class="home active-menu">
+          <a class="flex icon accueil" href="#home"><span class="text-navigation">Accueil</span></a>
           <span class="tooltip">Accueil</span>
         </li>
-        <li>
-          <a class="flex icon profil" href="#profil"><span class="text-navigation">Profil</span></a>
+        <li class="about">
+          <a class="flex icon profil" href="#about"><span class="text-navigation">Profil</span></a>
           <span class="tooltip">Profil</span>
         </li>
-        <li>
-          <a class="flex icon galerie" href="#galerie"><span class="text-navigationtext-navigation">Galerie</span></a>
+        <li class="gallery">
+          <a class="flex icon galerie" href="#gallery"><span class="text-navigationtext-navigation">Galerie</span></a>
           <span class="tooltip">Galerie</span>
         </li>
-        <li>
-          <a class="flex icon contact" href="#contact"><span class="text-navigation">Contact</span></a>
+        <li class="contactus">
+          <a class="flex icon contact" href="#contactus"><span class="text-navigation">Contact</span></a>
           <span class="tooltip">Contact</span>
         </li>
         <!-- <li><a href="#"><span class="icon accueil"></span></a></li> -->
@@ -70,11 +70,11 @@
 
     <main class="primary-main">
       <!-- main content of the home page -->
-      <section class="accueil-main flex" id="accueil">
-        <div class="left">
+      <section id="home" class="accueil-main flex">
+        <div class="left grid">
           <svg class="svg-container-bigger"><use href="#woohami-icon-letter" xlink:href="#woohami"></use></svg>
         </div>
-        <div class="right">
+        <div class="right grid">
           <div class="title-content flex">
             <h1 class="title">Woohami</h1>
             <h3 class="subtitle">graphiste</h3>
@@ -83,10 +83,13 @@
         </div>
       </section>
 
-      <section id="profil" class="profil-main grid">
+      <section id="about" class="profil-main grid">
         <h2 class="profil-title">Profil</h2>
-        <div class="profil-banner">
-          <p class="quote-banner">"Woohami" se prononce "wou-ah-maille". <em>-Woohami</em></p>
+        <div class="profil-banner flex flex-col">
+          <p class="quote-banner">
+            "Woohami" se prononce "wou-ah-maille".
+            <!-- <em>-Woohami</em> -->
+          </p>
           <p class="text-banner">Salut, je suis freelance graphiste, spécialisé en logo, montage vidéo et motion designer.</p>
         </div>
         <div class="skills-header flex flex-col">
@@ -94,14 +97,30 @@
           <p class="text">Je suis très à l'aise avec la suite Adobe, ici les logiciels que j'utitlise le plus</p>
         </div>
         <div class="skills-animations flex flex-col">
-          <div class="skill-icon"><img src="assets/logo_adobe_bleu_et_normal/ai_normal.png" alt="" /></div>
-          <div class="skill-bar"></div>
-          <div class="skill-icon"><img src="assets/logo_adobe_bleu_et_normal/ae_normal.png" alt="" /></div>
-          <div class="skill-bar"></div>
-          <div class="skill-icon"><img src="assets/logo_adobe_bleu_et_normal/pr_normal.png" alt="" /></div>
-          <div class="skill-bar"></div>
-          <div class="skill-icon"><img src="assets/logo_adobe_bleu_et_normal/ps_normal.png" alt="" /></div>
-          <div class="skill-bar"></div>
+          <div id="ai" class="skill flex">
+            <div class="skill-icon">
+              <!-- <img src="assets/logo_adobe_bleu_et_normal/ai_normal.png" alt="" /> -->
+            </div>
+            <div class="skill-bar"></div>
+          </div>
+          <div id="ae" class="skill flex">
+            <div class="skill-icon">
+              <!-- <img src="assets/logo_adobe_bleu_et_normal/ae_normal.png" alt="" /> -->
+            </div>
+            <div class="skill-bar"></div>
+          </div>
+          <div id="pr" class="skill flex">
+            <div class="skill-icon">
+              <!-- <img src="assets/logo_adobe_bleu_et_normal/pr_normal.png" alt="" /> -->
+            </div>
+            <div class="skill-bar"></div>
+          </div>
+          <div id="ps" class="skill flex">
+            <div class="skill-icon">
+              <!-- <img src="assets/logo_adobe_bleu_et_normal/ps_normal.png" alt="" /> -->
+            </div>
+            <div class="skill-bar"></div>
+          </div>
         </div>
 
         <div class="references-header flex flex-col">
@@ -109,18 +128,22 @@
           <p class="text">Vous pouvez retrouver mon profil sur ces 3 plateformes</p>
         </div>
         <div class="references-animations flex flex-col">
-          <div class="reference-icon"></div>
-          <div class="reference-name"><img src="assets/logo_profil/logo_malt_normal.png" alt="" /></div>
-          <div class="reference-icon"></div>
-          <div class="reference-name"><img src="assets/logo_profil/logo_graphiste_normal.png" alt="" /></div>
-          <div class="reference-icon"></div>
-          <div class="reference-name"><img src="assets/logo_profil/logo_insta_normal.png" alt="" /></div>
-          <div class="reference-icon"></div>
-          <div class="reference-name"></div>
+          <a href="#" class="reference-link">
+            <!-- <div class="reference-icon"><img src="assets/logo_profil/logo_malt_normalsq (100).png" alt="" /></div> -->
+            <div class="reference-name malt"><img src="assets/logo_profil/logo_malt_normal_text.png" alt="" /></div>
+          </a>
+          <!-- <div class="reference-icon"></div> -->
+          <a href="" class="reference-link">
+            <div class="reference-name graphiste"><img src="assets/logo_profil/logo_graphiste_normal_text.png" alt="" /></div>
+          </a>
+          <!-- <div class="reference-icon"></div> -->
+          <a href="" class="reference-link">
+            <div class="reference-name insta"><img src="assets/logo_profil/logo_insta_normal_text.png" alt="" /></div>
+          </a>
         </div>
       </section>
 
-      <section id="galerie" class="galerie-main grid">
+      <section id="gallery" class="galerie-main grid">
         <div class="galerie-left flex flex-col">
           <h2 class="galerie-title">Galerie</h2>
           <p>Logos</p>
@@ -140,8 +163,33 @@
             <a href="#" class="galerie-item"><img src="assets/logo_gs_et_color/fnfc-c.png" alt="" /></a>
           </div>
         </div>
-        <div class="galerie-right">
-          <p class="invert-text">Videos</p>
+        <div class="galerie-right"></div>
+      </section>
+      <section id="contactus" class="contact-main">
+        <h2 class="contact-title">Contact</h2>
+        <div class="contact-container flex">
+          <div class="front flex flex-col">
+            <div class="front-header flex">
+              <svg class="front-logo"><use href="#woohami-icon-letter"></use></svg>
+              <h3 class="front-title">Contactez moi</h3>
+            </div>
+            <p>Veuillez renseigner vos informations et me joindre par écrit votre projet.</p>
+            <p>Au plaisir de vous lire.</p>
+            <hr class="contact-hr" />
+
+            <form class="flex flex-col" action="">
+              <label class="" for="name">Votre nom</label>
+              <input class="" type="text" id="name" name="name" required />
+
+              <label class="" for="email">Votre email</label>
+              <input class="" type="email" id="email" name="email" required />
+
+              <label class="" for="objet">Votre demande</label>
+              <textarea name="objet" id="objet" cols="30" rows="10"></textarea>
+
+              <button class="send">Envoyer</button>
+            </form>
+          </div>
         </div>
       </section>
     </main>
@@ -149,6 +197,7 @@
     <footer></footer>
 
     <!-- scripts are here -->
+    <script src="main.js"></script>
     <script>
       let btn = document.querySelector("#btn");
       let primaryHeader = document.querySelector(".primary-header");

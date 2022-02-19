@@ -2,15 +2,30 @@
 // Aatypic
 // Highlight menu by replacing class tag active.
 
-var btnContainer = document.getElementById("nav-list");
-var btns = btnContainer.getElementsByClassName("btn");
+const sections = document.querySelectorAll("section");
+const navList = document.querySelectorAll("nav .primary-navigation li");
 
-for (var i = 0; i < btns.length; i++) {
-    btns[i].addEventListener('click', function () {
-        var current = document.getElementsByClassName("active");
-        current[0].className = current[0].className.replace(" active");
-        this.className += " active";
-    })
-}
+window.addEventListener("scroll", () => {
+  let current = "";
 
-console.log(btns);
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.clientHeight;
+    if (scrollY > sectionTop - sectionHeight / 3) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  navList.forEach((li) => {
+    li.classList.remove("active-menu");
+
+    if (li.classList.contains(current)) {
+      li.classList.add("active-menu");
+    }
+  });
+  console.log(current);
+});
+
+// skill progress bars
+
+// const skillBar = document.getElementsByClassName

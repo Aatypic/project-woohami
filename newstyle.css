@@ -6,13 +6,17 @@
   --clr-secondary-medium: hsl(199, 76%, 48%);
   --clr-secondary-dark: hsl(246, 30%, 55%);
   --clr-primary-100: hsl(210, 48%, 61%);
+  --clr-primary-200: hsl(210, 58%, 61%);
+
   --clr-primary-400: hsl(0, 0%, 47%);
 
   /* fonts */
   --f-primary: "Poppins";
 }
 
-/* general */
+/* ---------------------------
+----------- General ----------
+-----------------------------*/
 *,
 *::before,
 *::after {
@@ -22,6 +26,7 @@
   font-family: var(--f-primary);
 }
 html {
+  height: 100%;
   scroll-behavior: smooth;
 }
 .flex {
@@ -41,7 +46,12 @@ body {
   min-height: 100vh;
   width: 100%;
 }
-button {
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button.nav-toggle {
   border: 0;
   background: none;
 }
@@ -50,11 +60,24 @@ figure {
   margin: 0;
   padding: 0;
   background: #fff;
-  overflow: hidden;
   width: 40px;
 }
 
-/* primary header */
+section {
+  min-height: 100vh;
+}
+
+h2 {
+  font-size: 3em;
+  color: var(--clr-primary-100);
+}
+/* ---------------------------
+----------- Body -------------
+-----------------------------*/
+
+/* ---------------------------
+    ----------- NAV ----------
+        -----------------------------*/
 .primary-header {
   flex-direction: column;
   position: fixed;
@@ -205,9 +228,17 @@ figure {
   --gap: 1rem;
 }
 
-.primary-header .primary-navigation a:hover {
+.primary-header .primary-navigation li a:hover {
   color: #fff;
   background: var(--clr-primary-100);
+}
+
+.primary-header .primary-navigation .active-menu a {
+  color: #fff;
+  background: var(--clr-primary-100);
+}
+
+.primary-header .primary-navigation .active-menu a:hover {
 }
 
 .primary-header.active .primary-navigation li span {
@@ -215,6 +246,7 @@ figure {
 }
 .primary-header .primary-navigation li span {
   opacity: 0;
+  pointer-events: none;
 }
 
 .primary-navigation .icon::before {
@@ -263,9 +295,6 @@ figure {
   width: 100%;
   margin-bottom: 1rem;
 }
-hr {
-  opacity: 0;
-}
 
 .primary-header .profile-content {
   position: relative;
@@ -307,47 +336,50 @@ hr {
   transition: opacity 3s;
 }
 
+/* ---------------------------
+----------- MAIN -------------
+-----------------------------*/
 .primary-main {
   min-height: 100vh;
   position: relative;
-  align-items: center;
   background-color: var(--clr-bg-light);
   width: calc(100% - 5em);
   left: 5em;
   top: 0;
   z-index: 2;
   transition: all ease 500ms;
+
+  /* padding-left: 3rem; */
 }
 .primary-header.active ~ .primary-main {
   left: 15em;
   width: calc(100% - 15em);
 }
 
-/* .primary-header.active ~ .primary-main .svg-container-bigger {
-  fill: var(--clr-secondary-dark);
-  width: 1rem;
-} */
-
-/* ---------------------------
------------ Accueil----------
------------------------------*/
-h2 {
-  grid-area: profil;
-  font-size: 3em;
-  color: var(--clr-primary-100);
+/* @supports (scroll-snap-align: start) {
+  main {
+    scroll-snap-type: y proximity;
+    height: 100vh;
+    overflow-y: scroll;
+  }
 }
+section {
+  scroll-snap-align: start;
+} */
+/* ---------------------------
+    ---------- Section home-------
+        -----------------------------*/
 
 .accueil-main {
-  min-height: 100vh;
-  /* grid-template-columns: 1fr 1.5fr; */
-  /* place-content: center; */
-  /* place-items: center; */
+  --gap: 0;
 }
-
+.accueil-main .left {
+  width: 50%;
+}
 .left,
 .right {
-  /* height: inherit; */
-  /* aspect-ratio: 1/2; */
+  place-items: center;
+  /* height: 100vh; */
 }
 
 .accueil-main .left .svg-container-bigger {
@@ -359,7 +391,7 @@ h2 {
   background-size: 100%;
 
   padding: 1rem;
-  margin-left: 10%;
+  /* margin-left: 10%; */
 }
 
 .accueil-main .right .title-content {
@@ -387,20 +419,23 @@ h2 {
 }
 
 /* ---------------------------
------------ Profil ----------
------------------------------*/
+    -------- Section Profil ------
+        -----------------------------*/
 
 .profil-main {
-  min-height: 100vh;
+  padding: 4rem;
+
   --gap: 2rem;
-  padding: 2rem;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: 0.1fr 0.2fr 0.4fr 1fr;
+  grid-template-columns: 0.3fr 1fr 0.3fr 1fr;
+  grid-template-rows: 0.1fr 0.2fr 0.3fr 1fr;
   grid-template-areas:
-    "profil .  . . . "
-    ". banner banner banner ."
-    "skills skills . references references"
-    "skill skill . reference reference";
+    "profil profil . .  "
+    "banner banner banner banner"
+    ". skills . references"
+    ". skill . reference";
+}
+.profil-main h2 {
+  grid-area: profil;
 }
 
 .profil-main h4 {
@@ -412,21 +447,145 @@ h2 {
 }
 
 .profil-banner {
+  grid-column: 3;
   grid-area: banner;
+  align-items: center;
+}
+.quote-banner {
+  position: relative;
+  width: fit-content;
+}
+.quote-banner::after {
+  content: "-Woohami";
+  position: absolute;
+  top: 100%;
+  right: 0;
+  font-size: 0.875em;
 }
 
 .skills-header {
   grid-area: skills;
+}
+
+.skills-animations,
+.references-animations {
+  height: 100%;
+  min-height: 20vh;
 }
 .skills-animations {
   grid-area: skill;
   --gap: 0.5rem;
 }
 
+.skill {
+  align-items: center;
+  --gap: 2rem;
+  cursor: pointer;
+}
+
 .skill-icon img {
+  width: 100px;
+  z-index: 99;
+}
+
+.skill-icon::before {
   width: 100px;
 }
 
+#ai::before {
+  content: url("assets/logo_adobe_bleu_et_normal/ai_bleu\ \(100\).png");
+}
+#ai:hover::before {
+  content: url("assets/logo_adobe_bleu_et_normal/ai_normal\ \(100\).png");
+}
+#ae::before {
+  content: url("assets/logo_adobe_bleu_et_normal/ae_bleu\ \(100\).png");
+}
+#ae:hover::before {
+  content: url("assets/logo_adobe_bleu_et_normal/ae_normal\ \(100\).png");
+}
+#pr::before {
+  content: url("assets/logo_adobe_bleu_et_normal/pr_bleu\ \(100\).png");
+}
+#pr:hover::before {
+  content: url("assets/logo_adobe_bleu_et_normal/pr_normal\ \(100\).png");
+}
+#ps::before {
+  content: url("assets/logo_adobe_bleu_et_normal/ps_bleu\ \(100\).png");
+}
+#ps:hover::before {
+  content: url("assets/logo_adobe_bleu_et_normal/ps_normal\ \(100\).png");
+}
+
+.skill-bar {
+  position: relative;
+  width: 23em;
+  height: 3em;
+  background-color: #111;
+  border-radius: 1.5em;
+  /* display: inline-block; */
+}
+
+.skill-bar::before {
+  content: "";
+  /* content: attr(data-label);
+    display: flex;
+    align-items: center; */
+
+  position: absolute;
+  left: 0.5em;
+  top: 0.5em;
+  bottom: 0.5em;
+  /* width: calc(var(--skill-width, 0) * 1%); */
+  min-width: 2rem;
+  max-width: calc(100% - 1em);
+  background-image: var(--clr-gradient);
+  border-radius: 1em;
+  padding: 1em;
+
+  /* -webkit-animation-name: "progress";
+  animation-name: "progress";
+  -webkit-animation-duration: 3s;
+  animation-duration: 3s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear; */
+  /* -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1; */
+}
+
+/* @keyframes progress {
+  0% {
+    transform: translateX(1em);
+  }
+
+  50% {
+    transform: translateX(10em;
+  }
+  100% {
+    transform: translateX(23em);
+  }
+} */
+
+/* Adobe Illustrator */
+.skill:nth-child(1) .skill-bar::before {
+  width: 89%;
+}
+/* Adobe After Effect */
+.skill:nth-child(2) .skill-bar::before {
+  width: 82%;
+}
+/* Adobe PR */
+.skill:nth-child(3) .skill-bar::before {
+  width: 65%;
+}
+/* Adobe Photo Shop */
+.skill:nth-child(4) .skill-bar::before {
+  width: 73%;
+}
+
+/* endleft side */
+
+/* profil right side */
 .references-header {
   grid-area: references;
 }
@@ -434,24 +593,79 @@ h2 {
   grid-area: reference;
 }
 
+.reference-link {
+  position: relative;
+}
+
+.reference-name::before {
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+}
+.reference-name:hover::before {
+  /* transform: scale(1.05); */
+}
+
+.reference-name::after {
+  content: "";
+  display: block;
+  width: fit-content;
+  height: 10px;
+  background: var(--clr-secondary-light);
+}
+
+.malt::before {
+  content: url("assets/logo_profil/logo_malt_normalsq\ \(100\).png");
+}
+
+.malt:hover::before {
+  content: url("assets/logo_profil/logo_malt_seul_bleu\ \(100\).png");
+}
+
+.graphiste::before {
+  content: url("assets/logo_profil/logo_graphiste_normalsq\ \(100\).png");
+}
+
+.graphiste:hover::before {
+  content: url("assets/logo_profil/g_graphiste_bleu\ \(100\).png");
+}
+
+.insta::before {
+  content: url("assets/logo_profil/logo_insta_normalsq\ \(100\).png");
+}
+
+.insta:hover::before {
+  content: url("assets/logo_profil/logo_insta_bleu\ \(100\).png");
+}
+
 .references-animations .reference-name img {
   height: 100px;
+  display: inline-block;
 }
 
 /* ---------------------------
------------ Galerie ----------
------------------------------*/
+    --------Section Galerie ------
+        -----------------------------*/
 
 .galerie-main {
   min-height: 100vh;
-  --gap: 2rem;
-  padding: 2rem;
+  --gap: 1rem;
+  padding-left: 4rem;
   grid-template-columns: repeat(2, 1fr);
 }
+.galerie-main .galerie-left p {
+  padding-left: 2rem;
+  color: var(--clr-primary-400);
+}
 
+.galerie-main .galerie-left h4 {
+  padding-left: 4rem;
+  color: var(--clr-primary-100);
+}
 .galerie-main .galerie-left .galerie-container {
   grid-template-columns: repeat(3, 1fr);
   place-items: center;
+  padding-top: 4rem;
 }
 
 .galerie-item img {
@@ -473,4 +687,89 @@ h2 {
 
 .galerie-main .galerie-right {
   background-image: var(--clr-gradient);
+}
+
+/* ---------------------------
+    -------- Section Contact ------
+        -----------------------------*/
+
+.contact-main {
+  height: 100vh;
+  position: relative;
+}
+
+.contact-container {
+  padding-top: 4rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.front {
+  padding: 3rem;
+  background-image: var(--clr-gradient);
+  color: #fff;
+  border-radius: 0.5em;
+
+  box-shadow: 0px 10px 20px 5px #777777;
+}
+
+.contact-hr {
+  border-top: solid 1px #fff;
+  width: 80%;
+  align-self: center;
+}
+
+.front p {
+  line-height: 1em;
+}
+
+.contact-title {
+  padding-left: 4rem;
+}
+
+.front-logo {
+  width: 2rem;
+  aspect-ratio: 1;
+  fill: #fff;
+}
+
+button.send {
+  width: fit-content;
+  padding: 0.5rem 1rem;
+
+  color: var(--clr-secondary-dark);
+  background: #fff;
+  border: 0;
+  border-radius: 0.75em;
+}
+
+/* ---------------------------
+    -------- Media Querries ------
+        -----------------------------*/
+
+@media screen and (max-width: 40em) {
+  body {
+    width: 100vw;
+  }
+
+  .primary-header {
+    bottom: 0;
+
+    height: 10vh;
+    width: 100vw;
+
+    flex-direction: row;
+  }
+
+  .primary-header .logo-content {
+    display: none;
+  }
+  .primary-header .primary-navigation {
+    display: flex;
+    --gap: 0;
+    margin-top: 0;
+  }
+  .primary-header .primary-navigation li {
+    width: fit-content;
+  }
 }
